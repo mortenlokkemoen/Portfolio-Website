@@ -24,6 +24,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const apiUrl = 'https://codedevmorten.net/api';
 
         try {
             setStatus({
@@ -31,7 +32,7 @@ const ContactForm = () => {
                 message: 'Sending...',
             });
 
-            const response = await axios.post('https://codedevmorten.net/contact', formData);
+            const response = await axios.post(`${apiUrl}/contact`, formData);
 
             if(response.status === 200) {
                 setStatus({
