@@ -32,7 +32,12 @@ const ContactForm = () => {
                 message: 'Sending...',
             });
 
-            const response = await axios.post(apiUrl, formData);
+            const response = await axios.post(apiUrl, formData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Allow-Control-Allow-Origin': '*',
+                },
+            });
 
             if(response.status === 200) {
                 setStatus({
