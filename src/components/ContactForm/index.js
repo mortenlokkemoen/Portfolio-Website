@@ -24,7 +24,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const apiUrl = 'https://codedevmorten.net/api';
+        const apiUrl = 'https://melodic-capybara-026512.netlify.app/.netlify/functions/sendEmail';
 
         try {
             setStatus({
@@ -32,7 +32,7 @@ const ContactForm = () => {
                 message: 'Sending...',
             });
 
-            const response = await axios.post(`${apiUrl}/contact`, formData);
+            const response = await axios.post(apiUrl, formData);
 
             if(response.status === 200) {
                 setStatus({
