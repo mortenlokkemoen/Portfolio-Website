@@ -35,7 +35,6 @@ const ContactForm = () => {
             const response = await axios.post(apiUrl, formData, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Allow-Control-Allow-Origin': '*',
                 },
             });
 
